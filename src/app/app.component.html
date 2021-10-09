@@ -1,1 +1,31 @@
-<p>Funciona</p>
+<div class="products--grid">
+  <div class="box" *ngFor="let product of products">
+    <img [src]="product.image" alt="img" />
+    <div>
+      <h2 class="name">{{ product.name }}</h2>
+      <p>El precio de este articulo son {{ product.price }} pesos</p>
+    </div>
+  </div>
+</div>
+
+
+<div>
+  <form #nyForm="ngForm">
+    <div class="input-group">
+      <label for="name">Name</label>
+      <input type="text" required [(ngModel)]="register.name" name="name" placeholder="Name">
+      <p>Error message</p>
+    </div>
+    <div class="input-group">
+      <label for="email">Email</label>
+      <input type="mail" required [(ngModel)]="register.email" name="email" placeholder="Email">
+      <p>Error message</p>
+    </div>
+    <div class="input-group">
+      <label for="Password">Password</label>
+      <input type="password" required [(ngModel)]="register.password" name="password" placeholder="Password">
+      <p>Error message</p>
+    </div>
+    <button type="submit">Register</button>
+  </form>
+</div>
