@@ -10,7 +10,7 @@
 
 
 <div>
-  <form #nyForm="ngForm">
+  <form (ngSubmit)="onRegister()" #myForm="ngForm">
     <div class="input-group">
       <label for="name">Name</label>
       <input type="text" required [(ngModel)]="register.name" name="name" placeholder="Name">
@@ -26,6 +26,6 @@
       <input type="password" required [(ngModel)]="register.password" name="password" placeholder="Password">
       <p>Error message</p>
     </div>
-    <button type="submit">Register</button>
+    <button [disabled]="myForm.invalid" type="submit">Register</button>
   </form>
 </div>

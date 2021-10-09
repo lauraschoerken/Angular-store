@@ -47,4 +47,8 @@ export class AppComponent {
     email:'',
     password:''
   }
+
+  onRegister() {
+    console.log(this.register)
+  }
 }
